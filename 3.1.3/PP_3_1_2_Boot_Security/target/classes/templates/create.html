@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+</head>
+<body>
+<form action="#" th:action="@{/admin/create}" th:object="${user}" method="post">
+    <table>
+        <tr>
+            <td><label for="firstName">First name</label></td>
+            <td><label for="lastName">Last name</label></td>
+            <td><label for="age">Age</label></td>
+            <td><label for="email">E-mail</label></td>
+            <td><label for="password">Password</label></td>
+            <td><label for="roles">Roles</label></td>
+        </tr>
+        <tr>
+            <td><input type="text" th:field="*{firstName}" id="firstName" placeholder="First name"></td>
+            <td><input type="text" th:field="*{lastName}" id="lastName" placeholder="Last name"></td>
+            <td><input type="text" th:field="*{age}" id="age" placeholder="Age"></td>
+            <td><input type="text" th:field="*{email}" id="email" placeholder="E-Mail"></td>
+            <td><input type="text" th:field="*{password}" id="password" placeholder="Password"></td>
+            <td><input type="text" th:field="*{roles}" id="roles" placeholder="Roles"></td>
+            <td><input type="submit" value="Create User"></td>
+        </tr>
+    </table>
+
+<!--    <label for="firstName">First name</label>-->
+<!--    <input type="text" th:field="*{firstName}" id="firstName" placeholder="First name">-->
+<!--    <br>-->
+<!--    <label for="lastName">Last name</label>-->
+<!--    <input type="text" th:field="*{lastName}" id="lastName" placeholder="Last name">-->
+<!--    <br>-->
+<!--    <label for="age">Age</label>-->
+<!--    <input type="text" th:field="*{age}" id="age" placeholder="Age">-->
+<!--    <br>-->
+<!--    <label for="email">E-mail</label>-->
+<!--    <input type="text" th:field="*{email}" id="email" placeholder="E-Mail">-->
+<!--    <br>-->
+<!--    <label for="password">Password</label>-->
+<!--    <input type="text" th:field="*{password}" id="password" placeholder="Password">-->
+<!--    <br>-->
+<!--    <label for="roles">Roles</label>-->
+<!--    <input type="text" th:field="*{roles}" id="roles" placeholder="Roles">-->
+<!--    <br>-->
+<!--    <input type="submit" value="Create User">-->
+</form>
+
+<a href="javascript: document.logoutForm.submit()" role="menuitem"> Logout</a>
+<form name="logoutForm" th:action="@{/logout}" method="post" th:hidden="true">
+    <input hidden type="submit" value="Sign Out"/>
+</form>
+
+</body>
+</html>
